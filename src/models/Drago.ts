@@ -77,7 +77,7 @@ const DragoSchema: Schema = new Schema<DragoDocument>(
     dragoImageURL: { type: String, required: true },
   },
   {
-    collection: "dragoDataPerWalletAddress",
+    collection: "dragosInWalletAddress",
     timestamps: true, // Automatically manage createdAt and updatedAt fields
     toJSON: {
       transform(doc, ret) {
