@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 
 export default class MarketDataController {
   getDSTMarketPrice = async (req: Request, res: Response): Promise<void> => {
-    console.log("API KEY:", process.env.COINGECKO_API);
     try {
       const response = await fetch(
         "https://api.coingecko.com/api/v3/coins/dragon-soul-token",
