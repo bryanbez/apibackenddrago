@@ -16,8 +16,8 @@ export default class MarketDataController {
 
       const data = await response.json();
       const marketData = data.data.attributes.base_token_price_usd;
-      console.log("USD Price: " + marketData);
-      res.status(200).json({ usd: marketData });
+      const sixhrchange = data.data.attributes.price_change_percentage.h6;
+      res.status(200).json({ usd: marketData, h6: `${sixhrchange}%` });
     } catch (error) {
       console.error("Error fetching market price:", error);
       res.status(500).json({ message: "Error fetching market price", error });
